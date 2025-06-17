@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Tracet Mills"
+title                    : "Tracey Mills"
 title_separator          : "-"
 name                     : &name "Tracey Mills"
 description              : &description "personal description"
