@@ -11,54 +11,73 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* PhD candidate in Brain and Cognitive Sciences, MIT, 2024-
+* B.A. in Computer Science and Cognitive Science, Dartmouth College, 2018-2022
 
-Work experience
+Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* MIT CoCoSci Lab
+  * Post-bacc research assistant
+  * 2022-2024
+  * PI: Josh Tenenbaum
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Dartmouth College PhilLab
+  * Undergrad research assistant
+  * 2019-2022
+  * PI: Jonathan Phillips
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Dartmouth College Brain Engineering Lab
+  * Undergrad research assistant
+  * 2020-2022
+  * PI: Richard Granger
+
+* Dartmouth College Minds, Machines, and Society Lab
+  * Undergrad research assistant
+  * 2021-2022
+  * PI: Soroush Vosoughi
+
+
+Papers
+======
+Paul, L.A. & **Mills, T.**, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum, J.B. (under review). Reverse-Engineering the Centered Self.
+
+**Mills, T.**, Coates, N., Silva A., Jee, K., Ferrigno, S., Schulz L., Tenenbaum, J.B., & Cheyette, S.J. (in prep). The comparative and developmental origins of spatiotemporal pattern learning.
+
+**Mills, T.**, Tenenbaum, J.B., & Cheyette, S.J. (2023). Spatiotemporal pattern learning as probabilistic program synthesis. Advances in Neural Information Processing Systems, 37.
+
+**Mills, T.** & Phillips, J.S. (2023). Locating what comes to mind in empirically derived representational spaces. Cognition.
+
+**Mills, T.**<sup>*</sup>, Zhang, C.<sup>*</sup>, Chen, T.<sup>*</sup>, & Tenenbaum, J.B. (2023). Towards a model of confidence judgments in concept learning. Proceedings of the 45th Annual Meeting of the Cognitive Science Society.
+
+**Mills, T.** & Phillips, J.S. (2022). What comes to mind? Samples from relevance-based feature spaces. Proceedings of the 44th Annual Meeting of the Cognitive
   
-Skills
+<!-- Skills
 ======
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* Skill 3 -->
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+   -->
+<!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
-  
-Teaching
+   -->
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Service and leadership
+   -->
+<!-- Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
