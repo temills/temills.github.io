@@ -49,7 +49,7 @@ Paul, L.A. & **Mills, T.**, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum
 
 **Mills, T.**<sup>*</sup>, Zhang, C.<sup>*</sup>, Chen, T.<sup>*</sup>, & Tenenbaum, J.B. (2023). Towards a model of confidence judgments in concept learning. Proceedings of the 45th Annual Meeting of the Cognitive Science Society.
 
-**Mills, T.** & Phillips, J.S. (2022). What comes to mind? Samples from relevance-based feature spaces. Proceedings of the 44th Annual Meeting of the Cognitive
+**Mills, T.** & Phillips, J.S. (2022). What comes to mind? Samples from relevance-based feature spaces. Proceedings of the 44th Annual Meeting of the Cognitive Science Society.
   
 <!-- Skills
 ======
