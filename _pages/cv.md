@@ -16,30 +16,26 @@ Education
 
 Experience
 ======
-* MIT CoCoSci Lab
+* MIT CoCoSci Lab (2022-2024)
   * Post-bacc research assistant
-  * 2022-2024
   * PI: Josh Tenenbaum
 
-* Dartmouth College PhilLab
+* Dartmouth College PhilLab (2019-2022)
   * Undergrad research assistant
-  * 2019-2022
   * PI: Jonathan Phillips
 
-* Dartmouth College Brain Engineering Lab
+* Dartmouth College Brain Engineering Lab (2020-2022)
   * Undergrad research assistant
-  * 2020-2022
   * PI: Richard Granger
 
-* Dartmouth College Minds, Machines, and Society Lab
+* Dartmouth College Minds, Machines, and Society Lab (2021-2022)
   * Undergrad research assistant
-  * 2021-2022
   * PI: Soroush Vosoughi
 
 
 Papers
 ======
-Paul, L.A. & **Mills, T.**, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum, J.B. (under review). Reverse-Engineering the Centered Self.
+Paul, L.A.<sup>*</sup> & **Mills, T.**<sup>*</sup>, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum, J.B. (under review). Reverse-Engineering the Centered Self.
 
 **Mills, T.**, Coates, N., Silva A., Jee, K., Ferrigno, S., Schulz L., Tenenbaum, J.B., & Cheyette, S.J. (in prep). The comparative and developmental origins of spatiotemporal pattern learning.
 
