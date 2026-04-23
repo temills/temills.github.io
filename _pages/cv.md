@@ -35,9 +35,9 @@ Experience
 
 Papers
 ======
-Paul, L.A.<sup>*</sup> & **Mills, T.**<sup>*</sup>, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum, J.B. (under review). Reverse-Engineering the Centered Self.
+Paul, L.A.<sup>*</sup> & **Mills, T.**<sup>*</sup>, Ullman, T.D., De Freitas, J., Colas, C., & Tenenbaum, J.B. (accepted). Reverse-Engineering the Centered Self. [link](https://doi.org/10.31234/osf.io/xrk8s_v1)
 
-**Mills, T.**, Coates, N., Silva A., Jee, K., Ferrigno, S., Schulz L., Tenenbaum, J.B., & Cheyette, S.J. (in prep). The comparative and developmental origins of spatiotemporal pattern learning.
+**Mills, T.**, Coates, N., Silva A., Jee, K., Ferrigno, S., Schulz L., Tenenbaum, J.B., & Cheyette, S.J. (under review). The comparative and developmental origins of spatiotemporal pattern learning.
 
 **Mills, T.**, Tenenbaum, J.B., & Cheyette, S.J. (2023). Spatiotemporal pattern learning as probabilistic program synthesis. Advances in Neural Information Processing Systems, 37.
 
