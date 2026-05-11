@@ -1,0 +1,37 @@
+/* #demo {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+} */
+
+#game-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#game-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: max-content;
+  min-width: 100%;
+}
+
+#game-canvas-wrapper {
+  flex: 0 0 auto;
+}
+
+#game-canvas {
+  display: block;
+  border: 1px solid black;
+}
+
+#rules-box {
+  flex: 0 0 220px;
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 16px;
+  line-height: 1.5;
+}
