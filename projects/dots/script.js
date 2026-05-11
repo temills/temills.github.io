@@ -32,7 +32,7 @@
   let images = {}, audio = {};
   let startTime, dotIdx, ignoreClick, clickX, clickY, successList, rts, scaleAtClick, nCorrect;
 
-  let max_dots = 3;
+  let max_dots = 16;
 
   init(false);
 
