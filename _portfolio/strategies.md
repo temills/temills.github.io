@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Strategy Discovery"
 excerpt: ""
 collection: portfolio
@@ -11,4 +11,4 @@ collection: portfolio
 <div id="demo"></div>
 
 <link rel="stylesheet" href="/projects/strategies/sty.css">
-<script src="/projects/strategies/script.js"></script>
+<script src="/projects/strategies/script.js"></script> -->

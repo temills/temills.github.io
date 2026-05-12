@@ -305,7 +305,7 @@ function animateEnd(dotIdx) {
 
   panel.hidden = true;
 
-  actionButton.textContent = `You got ${nCorrect}/${dotIdx-3} close predictions — Try another pattern`;
+  actionButton.textContent = `You got ${nCorrect}/${dotIdx-1} close predictions — Try another pattern`;
   actionButton.hidden = false;
   actionButton.onclick = init;
 
