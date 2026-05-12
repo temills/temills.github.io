@@ -112,3 +112,18 @@
 .dot-action-button:active {
   transform: translateY(0);
 }
+
+.dot-demo-shell {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.dot-canvas-wrap {
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}

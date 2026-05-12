@@ -44,7 +44,7 @@
 
     display_element.innerHTML = `
     <div class="dot-demo-shell">
-        <button id="dot-action-button" class="dot-action-button">Try the task - guess where the star will go next!</button>
+        <button id="dot-action-button" class="dot-action-button">Click here to try the task - guess where the star will go next!</button>
 
         <div id="dot-canvas-wrap" class="dot-canvas-wrap">
         <canvas id="staticCanvas"></canvas>
@@ -183,7 +183,10 @@
     window.addEventListener("orientationchange", resetCanvas);
     rotatingCanvas.addEventListener("mousedown", onClick);
     rotatingCanvas.addEventListener("touchstart", onClick, { passive: false });
-    window.addEventListener("touchmove", e => e.preventDefault(), { passive: false });
+    //window.addEventListener("touchmove", e => e.preventDefault(), { passive: false });
+    rotatingCanvas.addEventListener("touchmove", e => {
+      if (!ignoreClick) e.preventDefault();
+    }, { passive: false });
   }
 
   function removeListeners() {
@@ -302,7 +305,7 @@ function animateEnd(dotIdx) {
 
   panel.hidden = true;
 
-  actionButton.textContent = `You got ${nCorrect}/${dotIdx-2} close predictions — Try another pattern`;
+  actionButton.textContent = `You got ${nCorrect}/${dotIdx-3} close predictions — Try another pattern`;
   actionButton.hidden = false;
   actionButton.onclick = init;
 
