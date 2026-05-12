@@ -38,7 +38,7 @@ collection: portfolio
      
     <br><br><image src="/projects/dots/figs/models.png" style="width:80%; align:center"></image><br><br>
 
-    Our results suggest that program induction is a powerful, early-emerging and perhaps <i>distinctive</i> mechanism of human structure learning. Open questions include how young children acquire and learn to flexibly deploy this mechanism, and what specific circumstances or capacities differentiate the development of program-learning abilities in human and nonhuman animals. For further discussion see associated papers!
+    Our results suggest that program induction is a powerful, early-emerging and perhaps <i>distinctive</i> mechanism of human structure learning. Open questions include how young children acquire and learn to flexibly deploy this mechanism, and what specific circumstances or capacities differentiate the development of program-learning abilities in humans and nonhuman animals. For further discussion see associated papers!
     <br><br>
  </p>
 

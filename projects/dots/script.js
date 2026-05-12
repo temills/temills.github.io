@@ -44,7 +44,7 @@
 
     display_element.innerHTML = `
     <div class="dot-demo-shell">
-        <button id="dot-action-button" class="dot-action-button">Try the task</button>
+        <button id="dot-action-button" class="dot-action-button">Try the task - guess where the star will go next!</button>
 
         <div id="dot-canvas-wrap" class="dot-canvas-wrap">
         <canvas id="staticCanvas"></canvas>
@@ -283,7 +283,7 @@
 
       setTimeout(() => {
         if (dotIdx >= Math.min(max_dots, trial.dot_positions[0].length - 2)){
-          animateEnd();
+          animateEnd(dotIdx);
         } else {
           dotIdx++;
           resetCanvas();
@@ -294,7 +294,7 @@
     }, CONFIG.before_feedback_time);
   }
 
-function animateEnd() {
+function animateEnd(dotIdx) {
   removeListeners();
 
   const panel = document.getElementById("dot-finish-panel");
@@ -302,7 +302,7 @@ function animateEnd() {
 
   panel.hidden = true;
 
-  actionButton.textContent = `You got ${nCorrect} close predictions — Try another pattern`;
+  actionButton.textContent = `You got ${nCorrect}/${dotIdx-2} close predictions — Try another pattern`;
   actionButton.hidden = false;
   actionButton.onclick = init;
 
