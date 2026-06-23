@@ -75,7 +75,7 @@ collection: portfolio
 
     <br><br><image src="/projects/self/figs/all_model_vs_human_solving_times.png" style="width:80%"></image><br><br>
 
-    As the number of low-level actions in a puzzle's solution increases, search becomes costly for the Flat agent. The meta-ePOMDP agent avoids combinatorial explosions in search by factoring the search space hierarchically within possible problems, with the costliest puzzles presenting many candidate problems. The meta-ePOMDP agent best captures variation in human solve times, suggesting that people take an efficient, hierarchical approach to problem selection and solving. 
+    As the number of low-level actions in a puzzle's solution increases, search becomes costly for the Flat agent. The meta-ePOMDP agent avoids combinatorial explosions in search by factoring the search space hierarchically within possible problems, with the costliest puzzles presenting many candidate problems. The meta-ePOMDP agent best captures variation in human solve times, suggesting that people take an efficient, hierarchical approach to problem selection and solving. Check out the paper for lots of additional discussion!
   </p>
 
 </div>
