@@ -1,15 +1,17 @@
 ---
 layout: archive
-title: "CV"
+title: " "
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
+<embed src="/files/cv.pdf" width="100%" height="1000px" type="application/pdf">
+
 {% include base_path %}
 
-Education
+<!-- Education
 ======
 * PhD candidate in Brain and Cognitive Sciences, MIT, 2024-
 * B.A. in Computer Science and Cognitive Science, Dartmouth College, 2018-2022
@@ -46,34 +48,4 @@ Paul, L.A.<sup>*</sup> & **Mills, T.**<sup>*</sup>, Ullman, T.D., De Freitas, J.
 **Mills, T.**<sup>*</sup>, Zhang, C.<sup>*</sup>, Chen, T.<sup>*</sup>, & Tenenbaum, J.B. (2023). Towards a model of confidence judgments in concept learning. Proceedings of the 45th Annual Meeting of the Cognitive Science Society.
 
 **Mills, T.** & Phillips, J.S. (2022). What comes to mind? Samples from relevance-based feature spaces. Proceedings of the 44th Annual Meeting of the Cognitive Science Society.
-  
-<!-- Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3 -->
-
-<!-- Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
    -->
-<!-- Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-   -->
-<!-- Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-   -->
-<!-- Service and leadership
-======
-* Currently signed in to 43 different slack teams -->

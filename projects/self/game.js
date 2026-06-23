@@ -70,11 +70,11 @@ class Game {
             logic_u_levels(this.#possible_levels);
         } else if (gameType === "contingency_u" || gameType === "change_agent_u" || gameType === "shuffle_keys_u") {
             contingency_u_levels(this.#possible_levels);
-        } else if (game_type === 'contingency_2') {
+        } else if (gameType === 'contingency_2') {
             contingency_2_levels(this.#possible_levels);
-        } else if (game_type === 'contingency_6') {
+        } else if (gameType === 'contingency_6') {
             contingency_6_levels(this.#possible_levels);
-        } else if (game_type === 'contingency_8') {
+        } else if (gameType === 'contingency_8') {
             contingency_8_levels(this.#possible_levels);
         }
         this.reset_game(gameType)

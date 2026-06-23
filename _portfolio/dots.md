@@ -16,6 +16,13 @@ collection: portfolio
     Laura Schulz, Josh Tenenbaum, and Sam Cheyette
   </p>
 
+  <p class="project-links">
+    <a href="https://doi.org/10.31234/osf.io/2n85j_v2" target="_blank">Preprint (2026)</a> ·
+    <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/aa5c083f9d387c49514eb5c4dc2dc16b-Abstract-Conference.html" target="_blank">NeurIPS paper (2023)</a> ·
+    <a href="https://osf.io/7m6xa/overview" target="_blank">Data & code</a>
+</p>
+
+
  <p class="description">
     People learn languages, music, games, mathematics, and a seemingly limitless assortment of other structures across domains. How do we <i>efficiently</i> learn such a large variety of richly structured representations? To answer this question, we investigate structure learning mechanisms in human adults, children, and nonhuman primates using a highly unconstrained sequence prediction task.
  </p>
@@ -41,14 +48,6 @@ collection: portfolio
     Our results suggest that program induction is a powerful, early-emerging and perhaps <i>distinctive</i> mechanism of human structure learning. Open questions include how young children acquire and learn to flexibly deploy this mechanism, and what specific circumstances or capacities differentiate the development of program-learning abilities in humans and nonhuman animals. For further discussion see associated papers!
     <br><br>
  </p>
-
-
-<p class="project-links">
-    <strong>Associated work:</strong>
-    <a href="https://doi.org/10.31234/osf.io/2n85j_v2" target="_blank">Preprint (2026)</a> ·
-    <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/aa5c083f9d387c49514eb5c4dc2dc16b-Abstract-Conference.html" target="_blank">NeurIPS paper (2023)</a> ·
-    <a href="https://osf.io/7m6xa/overview" target="_blank">Data & code</a>
-</p>
 
 </div>
 

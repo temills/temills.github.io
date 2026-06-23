@@ -2,6 +2,23 @@ const display_element = document.getElementById("demo");
 display_element.innerHTML = `
   <div style="text-align:center;">
     <h2>${""}</h2>
+    <div id="game_selector">
+    <select id="game_choice">
+        <option value="logic">Logic Game</option>
+        <option value="contingency">Contingency Game</option>
+        <option value="shuffle_keys">Switching Mappings Game</option>
+        <option value="change_agent">Switching Embodiments Game</option>
+        <option value="logic_u">Logic + Goal Uncertainty Game</option>
+        <option value="contingency_u">Contingency + Goal Uncertainty Game</option>
+        <option value="contingency_2">Contingency (2) Game</option>
+        <option value="contingency_6">Contingency (6) Game</option>
+        <option value="contingency_8">Contingency (8) Game</option>
+        <option value="contingency_noisy">Noisy Contingency Game</option>
+        <option value="shuffle_keys_u">Switching Mappings + Goal Uncertainty Game</option>
+        <option value="change_agent_10">Switching Embodiments (Infrequent) Game</option>
+
+    </select>
+    </div>
   <div class="float-container">
     <div class="float-child" id="game-area">
       <div id="container"></div>
@@ -9,15 +26,12 @@ display_element.innerHTML = `
 
     <div class="float-child" id="sidebar">
       <div id="step_count_text">Step: <b>0</b></div>
-
       <div class="vertical-bar-container">
         <div id="step_fill" class="fill-bar"></div>
       </div>
     </div>
   </div>
-
   <div id="instruction_card">
-    <h3>Instructions:</h3>
   </div>
 
   <div id="alert-container">!</div>
@@ -29,31 +43,67 @@ function initGame() {
     var ignore_click=false
     var click_wait_time = 0
     // Construct the game
-    var game_type = "change_agent"
-    var game = new Game(game_type);
+    const dropdown = document.getElementById("game_choice");
+    let game_type = dropdown.value;
+
+    let game = new Game(game_type);
     var dimensions = [game.getBoard().length, game.getBoard()[0].length];
+    var board = game.getBoard();
+    var rows = board.length;
+    var cols = board[0].length;
+    var cell_size = 100/cols
+    var gridWidth = cols * (450 / Math.max(rows, cols));
+    var gridHeight = rows * (450 / Math.max(rows, cols));
+    container.innerHTML = `
+    <div id="grid" style="width:${gridWidth}px; height:${gridHeight}px;">
+        ${markup}
+    </div>
+    `;
 
-    const board = game.getBoard();
-    const rows = board.length;
-    const cols = board[0].length;
+    //container.style.width = size + "px";
+    //container.style.height = size + "px";
 
-    const size = 450;
+    //const cellSize = size / cols;
 
-    container.style.width = size + "px";
-    container.style.height = size + "px";
-
-    const cellSize = size / cols;
-
+    // document.querySelectorAll(".field").forEach(el => {
+    //     el.style.width = cellSize + "px";
+    //     el.style.height = cellSize + "px";
+    // });
     document.querySelectorAll(".field").forEach(el => {
-    el.style.width = cellSize + "px";
-    el.style.height = cellSize + "px";
+        el.style.width = "10%";
+        //el.style.height = "px";
+    });
+
+    dropdown.addEventListener("change", function() {
+        game_type = this.value;
+        game = new Game(game_type);
+        dimensions = [game.getBoard().length, game.getBoard()[0].length];
+        board = game.getBoard();
+        rows = board.length;
+        cols = board[0].length;
+        cell_size = 100/cols
+        gridWidth = cols * (450 / Math.max(rows, cols));
+        gridHeight = rows * (450 / Math.max(rows, cols));
+        container.innerHTML = `
+        <div id="grid" style="width:${gridWidth}px; height:${gridHeight}px;">
+            ${markup}
+        </div>
+        `;
+        // game_type = this.value;
+        // game = new Game(game_type);
+        paintBoard();
+
+        document.getElementById("step_count_text").innerHTML = "Step: <b>0</b>";
+        document.getElementById('step_fill').style.height = "100%";
+        add_instructions()
+        // document.getElementById("status_text").innerHTML = "";
     });
 
 
 
     function add_instructions() {
         var el = document.getElementById("instruction_card")
-        el.innerHTML += 'On each level, you control a red square with the arrow keys.<br>'
+        el.innerHTML = '<b>Instructions:</b><br>On each level, you control a red square with the arrow keys.<br>'
         if (game_type.includes('change_agent')) {
             el.innerHTML += 'The square you are controlling may change within a level.<br>'
         } else if (game_type.includes('shuffle_keys')) {
@@ -68,16 +118,46 @@ function initGame() {
     var markup = game.getBoard().map(row => row.map(col => `<span class="field ${col === 8 ?
         "avatar" : col === 2 ?
             "goal" : col === 0 ?
-                "grass" : "wall"}"></span>`).join("")).join("<span class='clear'></span>");
+                "grass" : "wall"}" style="width:${cell_size}%; height:${cell_size}%;" ></span>`).join("")).join("<span class='clear'></span>");
 
-    document.getElementById("container").innerHTML = markup;
+    //document.getElementById("container").innerHTML = markup;
+    //document.getElementById("container").innerHTML = `<div id="grid">${markup}</div>`;
+    container.innerHTML = `
+    <div id="grid" style="width:${gridWidth}px; height:${gridHeight}px;">
+        ${markup}
+    </div>
+    `;
+
 
     function paintBoard() {
         markup = game.getBoard().map(row => row.map(col => `<span class="field ${col === 8 ?
             "avatar" : col === 2 ?
                 "goal" : col === 0 ?
-                    "grass" : "wall"}"></span>`).join("")).join("<span class='clear'></span>");
-        document.getElementById("container").innerHTML = markup;
+                    "grass" : "wall"}" style="width:${cell_size}%; height:${cell_size}%;" ></span>`).join("")).join("<span class='clear'></span>");
+       // document.getElementById("container").innerHTML = markup;
+       //document.getElementById("container").innerHTML = `<div id="grid">${markup}</div>`;
+       container.innerHTML = `
+        <div id="grid" style="width:${gridWidth}px; height:${gridHeight}px;">
+            ${markup}
+        </div>
+        `;
+    }
+
+    function showGameMessage(won) {
+        if (won) {
+            // put n steps below success
+
+            var color = "green"
+            container.innerHTML = `
+            <div style="color:${color}; font-size: 24px;"><h3>Success!</h3><i>You won in ${game.getCurrentActionCount()} steps</div>
+        `;
+        } else {
+            var color = "red"
+             container.innerHTML = `
+            <div style="color:${color}; font-size: 24px;"><h3>You Lost!</h3><i>Try again!</i></div>
+
+        `;
+        }
     }
 
     $(document).click(function(event) {
@@ -87,7 +167,6 @@ function initGame() {
     function showAlert(message, color) {
         var alertBox= document.getElementById('alert-container');
         alertBox.style.display = 'block';
-        console.log(color)
         alertBox.style.backgroundColor = color;
         alertBox.innerHTML = message;
         // Hide the alert after 1000 milliseconds (1 second)
@@ -121,19 +200,19 @@ function initGame() {
         //step game after each key press
         var level_status = game.step(tmp); //0 if nothing, 1 if just won, 2 if just lost
         var wait_time = 0
-        if (level_status==1) {
-            showAlert("Success!", "lightgreen");
-            var wait_time = 1000
-        }
-        else if (level_status==2) {
-            showAlert("You failed to complete the level!", "red");
-            var wait_time = 2000
-        }
         document.getElementById("step_count_text").innerHTML = "Step: <b>" + (game.getCurrentActionCount()) + "</b>";
         //document.getElementById("level_count").innerHTML = "Level: <b>" + (game.getLevelCount()+1) + "</b>/40";
         document.getElementById('step_fill').style.height = (100*(1-(game.getCurrentActionCount()/150))) + "%"
         paintBoard();
         ignore_click=true
+        if (level_status==1) {
+            showGameMessage(true);
+            var wait_time = 1500;
+        }
+        else if (level_status==2) {
+            showGameMessage(false);
+            var wait_time = 1500;
+        }
         //make stuff transparent
         setTimeout(function() {
             if (level_status==1 || level_status==2) {
