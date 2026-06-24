@@ -40,7 +40,7 @@ collection: portfolio
 
   <h3>Baba is You</h3>
   <p class="description">    
-  While the Avatar Games test how people locate themselves physically within a problem, the second set of tasks highlights a more radical kind of self-location: deciding <i>which problem to locate oneself within</i>, from an abstract space of possible problems. Participants played a version of the puzzle video game <a href="https://hempuli.com/baba/">Baba Is You</a>, which externalizes this problem selection process. Players change the problem at hand by literally changing the rules of the game. Click to watch participants solve the levels below. 
+  While the Avatar Games test how people locate themselves physically within a problem, the second set of tasks highlights a more radical kind of self-location: deciding <i>which problem to locate oneself within</i>, from an abstract space of possible problems. Participants played a version of the puzzle video game <a href="https://hempuli.com/baba/">Baba Is You</a>, which externalizes this problem selection process. Players change the problem at hand by literally changing the rules of the game. Click play to watch participants solve the levels below. 
   <br><br>
   </p>
 
