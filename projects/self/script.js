@@ -42,6 +42,7 @@ function initGame() {
     var rt_lists = []
     var ignore_click=false
     var click_wait_time = 0
+    var start_time = performance.now()
     // Construct the game
     const dropdown = document.getElementById("game_choice");
     let game_type = dropdown.value;
@@ -246,61 +247,62 @@ function initGame() {
         }, wait_time)
     }
 
+    function keyHandler(event) {
+        //don't allow held keys
+        if (event.repeat) { return }
+        if (ignore_click) { return }
+        if (game.getLevelCount() !== game.getNumLevels() && document.readyState === 'complete' && // listen only if document is loaded
+            (event.key === 'w' || event.key === 'a' || event.key === 's' || event.key === 'd' ||
+                event.key === 'W' || event.key === 'A' || event.key === 'S' || event.key === 'D'
+                || event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft' ||
+                event.key === 'ArrowRight')) { // move
+
+            ignore_click=true
+
+            var elapsed = performance.now() - start_time;
+            if (game.getCurrentActionCount() == 0) {
+                rt_lists.push([])
+            }
+            rt_lists[rt_lists.length-1].push(elapsed)
+            start_time = performance.now()
+            let tmp;
+            switch (event.key) {
+                case "w" || "W":
+                    tmp = 0;
+                    break;
+                case "s" || "S":
+                    tmp = 1;
+                    break;
+                case "a" || "A":
+                    tmp = 2;
+                    break;
+                case "d" || "D":
+                    tmp = 3;
+                    break;
+                case "ArrowUp":
+                    tmp = 0;
+                    break;
+                case "ArrowDown":
+                    tmp = 1;
+                    break;
+                case "ArrowLeft":
+                    tmp = 2;
+                    break;
+                case "ArrowRight":
+                    tmp = 3;
+                    break;
+            }
+            //showClickArrow(tmp);
+            step_game(tmp, keyHandler)
+        }
+    }
+
     $(document).ready(function () {
         //init start time on ready
-        var start_time = performance.now()
+        start_time = performance.now()
         $('div.alert-primary').fadeIn(100)//.delay(7000).fadeOut(700);
 
         document.addEventListener("keydown", keyHandler, false);
-        function keyHandler(event) {
-            //don't allow held keys
-            if (event.repeat) { return }
-            if (ignore_click) { return }
-            if (game.getLevelCount() !== game.getNumLevels() && document.readyState === 'complete' && // listen only if document is loaded
-                (event.key === 'w' || event.key === 'a' || event.key === 's' || event.key === 'd' ||
-                    event.key === 'W' || event.key === 'A' || event.key === 'S' || event.key === 'D'
-                    || event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft' ||
-                    event.key === 'ArrowRight')) { // move
-                
-                ignore_click=true
-                
-                var elapsed = performance.now() - start_time;
-                if (game.getCurrentActionCount() == 0) {
-                    rt_lists.push([])
-                }
-                rt_lists[rt_lists.length-1].push(elapsed)
-                start_time = performance.now()
-                let tmp;
-                switch (event.key) {
-                    case "w" || "W":
-                        tmp = 0;
-                        break;
-                    case "s" || "S":
-                        tmp = 1;
-                        break;
-                    case "a" || "A":
-                        tmp = 2;
-                        break;
-                    case "d" || "D":
-                        tmp = 3;
-                        break;
-                    case "ArrowUp":
-                        tmp = 0;
-                        break;
-                    case "ArrowDown":
-                        tmp = 1;
-                        break;
-                    case "ArrowLeft":
-                        tmp = 2;
-                        break;
-                    case "ArrowRight":
-                        tmp = 3;
-                        break;
-                }
-                //showClickArrow(tmp);
-                step_game(tmp, keyHandler)
-            }
-        }
     });
 
     function window_keyhandler(e) {
@@ -311,8 +313,11 @@ function initGame() {
     window.addEventListener("keydown", window_keyhandler, false);
 
 
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
+    // swipe-to-move on mobile: scoped to the game grid so swiping the rest of the page still scrolls normally
+    var SWIPE_THRESHOLD = 20; // px, ignores small jitter/taps so they aren't read as moves
+    container.addEventListener('touchstart', handleTouchStart, false);
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd, false);
 
     var xDown = null;
     var yDown = null;
@@ -328,19 +333,31 @@ function initGame() {
         yDown = firstTouch.clientY;
     };
 
+    function handleTouchEnd(evt) {
+        xDown = null;
+        yDown = null;
+    };
 
     //same thing but for touch screen
     function handleTouchMove(evt) {
         var tmp;
-        if (!xDown || !yDown) {
+        if (xDown === null || yDown === null) {
             return;
         }
+        if (ignore_click) { return }
 
         var xUp = evt.touches[0].clientX;
         var yUp = evt.touches[0].clientY;
 
         var xDiff = xDown - xUp;
         var yDiff = yDown - yUp;
+
+        if (Math.max(Math.abs(xDiff), Math.abs(yDiff)) < SWIPE_THRESHOLD) {
+            return;
+        }
+
+        // prevent the page from scrolling while swiping over the grid
+        evt.preventDefault();
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0) {

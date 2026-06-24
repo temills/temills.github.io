@@ -168,7 +168,7 @@ svg {
   max-width: 700px;
   margin: 6px auto 10px auto;
   padding: 1px;
-  background: white;
+  background: transparent;
 
   border: 1px solid gray;
 
@@ -194,6 +194,7 @@ svg {
   margin-top: 8px;
   font-size: 20px;
   padding: 4px 8px;
+  color: #333;
 }
 
 .game-message {
