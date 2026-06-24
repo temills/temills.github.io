@@ -344,6 +344,13 @@ function initGame() {
         if (xDown === null || yDown === null) {
             return;
         }
+
+        // prevent the page from scrolling while a touch started on the grid is in progress.
+        // must happen on every touchmove, not just once the swipe threshold is crossed -
+        // the browser commits to scrolling on the first un-prevented touchmove of a gesture,
+        // and calling preventDefault later can't undo that.
+        evt.preventDefault();
+
         if (ignore_click) { return }
 
         var xUp = evt.touches[0].clientX;
@@ -355,9 +362,6 @@ function initGame() {
         if (Math.max(Math.abs(xDiff), Math.abs(yDiff)) < SWIPE_THRESHOLD) {
             return;
         }
-
-        // prevent the page from scrolling while swiping over the grid
-        evt.preventDefault();
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0) {
