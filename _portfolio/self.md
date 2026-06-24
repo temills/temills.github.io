@@ -20,7 +20,7 @@ collection: portfolio
 
 
   <p class="description">
-      Standard models of intelligent problem solving often involve specifying an agent's <i>problem representation</i>. However, an important feature of human problem solving is the ability to represent oneself as solving <i>many different problems</i>, and choosing between them through rational inference and decision making. We instantiate this hierarchical approach to problem solving as a "meta-ePOMDP agent," and compare it and other models to human behavior on two sets of tasks that highlight problem selection. Read a more complete summary of the theory behind the work <a href="https://www.growkudos.com/articles/10.1037/rev0000623?utm_medium=widget&utm_source=publication-widget">here</a>, or check out the tasks below. 
+      Standard models of intelligent problem solving often involve specifying an agent's <i>problem representation</i>. However, an important feature of human problem solving is the ability to represent oneself as solving <i>many different problems</i>, and choose between them through rational inference and decision making. We instantiate this hierarchical approach to problem solving as a "meta-ePOMDP agent," and compare it and other models to human behavior on two sets of tasks that highlight problem selection. Read a more complete summary of the theory behind the work <a href="https://www.growkudos.com/articles/10.1037/rev0000623?utm_medium=widget&utm_source=publication-widget">here</a>, or check out the tasks below. 
   </p>
 
   <h3>The Avatar Games</h3>
